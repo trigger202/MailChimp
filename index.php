@@ -7,52 +7,114 @@
  */
 
 
-
 require_once('vendor/autoload.php');
-
 require_once ('APIClient.php');
 require_once ('config.php');
 
 
-
 $api_key = $config['API_Key'];
-
 $chimp = new APIClient($api_key);
 
 
-//
+// ===============list functions ==============
+
+/* create a list */
+
+$data = array('name'=>'my first list item',
+
+    'contact'=>array(
+        'company' => "MailChimp",
+        'address1' => "675 Ponce De Leon Ave NE",
+        'address2' => "Suite 5000",
+        'city' => "zip",
+        'state' => "GA",
+        'zip' => "30308",
+        'country' => "US",
+        'phone' => ""
+    ),
+
+    'permission_reminder'=>'this is a test, please ignore if you recieve this',
+
+
+    'campaign_defaults'=>array(
+
+        'from_name'=>"ali",
+        'from_email'=>"ali@gmail.com",
+        'subject'=>"ali test",
+        'language'=>"en",
+    ),
+
+    'email_type_option'=>false,
+
+);
+$jsonData = json_encode($data);
+//$newItemInfo = $chimp->createListItem($jsonData);
+//print_r($newItemInfo);
+//return;
+
+
+
+/*get all lists*/
+
 //$listData =$chimp->getLists();
 //print_r($listData);
 //return;
+
+
+/*get a specific list */
 //$listData = $chimp->getList('81537a55b2');
-
-//$listData = $chimp->createListItem();
-
-//$listData = $chimp->updateList('2e3abfc3f2');
 //print_r($listData);
-
-
-$listData = $chimp->deleteList('aed5c3930d');
-
-print_r($listData);
-return;
+//return;
 
 
 
-//$deletedList = $chimp->deleteList('144e46989e');
 
-//print_r($deletedList);
+/*update a list */
+
+$data = array('name'=>'my first list item - updated',
+
+    'contact'=>array(
+        'company' => "MailChimp",
+        'address1' => "675 Ponce De Leon Ave NE",
+        'address2' => "Suite 5000",
+        'city' => "zip",
+        'state' => "GA",
+        'zip' => "30308",
+        'country' => "US",
+        'phone' => ""
+    ),
+
+    'permission_reminder'=>'this is a test, please ignore if you recieve this',
 
 
-//$chimp->updateList('aed5c3930d');
+    'campaign_defaults'=>array(
+
+        'from_name'=>"ali",
+        'from_email'=>"ali@gmail.com",
+        'subject'=>"ali test",
+        'language'=>"en",
+    ),
+
+    'email_type_option'=>false,
+
+);
 
 
-//$result = $chimp->createMember('ab6d6ea698',[]);
+//$newItem= $chimp->updateList('81537a55b2', json_encode($data));
+//print_r($newItem);
+//return
 
-//print_r($result);
+
+///*delete a list item*/
+
+//$listData = $chimp->deleteList('81537a55b2');
+//print_r($listData);
+//return;
 
 
-//$result = $chimp->updateMember('ab6d6ea698','ali@gmail.com');
+
+/*======================create a member within a list =======================*/
+
 $data = array(
 
     "email_address"=>"property@gmail.com",
@@ -61,32 +123,33 @@ $data = array(
                             'LNAME'=>'test last name')
 
 );
-//$jsonData = json_encode($data);
-//
-//
-//$result = $chimp->addMember('ab6d6ea698', "$jsonData");
-//
+
+
+
+//$result = $chimp->addMember('5d7331918b', json_encode($data));
 //print_r($result);
-//
 //return;
 
 
 
+//===================================================Update a member =============================
+
 $data = array(
 
-    "email_address"=>"whatisthis@gmail.com",
-    "status"=>"pending",
-    'merge_fields'=>array('FNAME'=>'test first name - updated - final',
-        'LNAME'=>'test last name - updated - final')
+    "email_address"=>"property@gmail.com",
+    "status"=>"subscribed",
+    'merge_fields'=>array('FNAME'=>'test first name',
+        'LNAME'=>'test last name')
 
 );
 
-$jsonData = json_encode($data);
+$result = $chimp->updateMember('ab6d6ea698',"thisisadfdatest@gmail.com", json_encode($data));
+print_r($result);
 
-//$result = $chimp->updateMember('ab6d6ea698',"whatisthis@gmail.com",$jsonData);
-
-
-$result = $chimp->removeMember('ab6d6ea698','adlfjdf+3@freddiesjokes.com');
+return;
 
 
-var_dump($result);
+
+//========================Remove a member from a list =======================
+//$result = $chimp->removeMember('ab6d6ea698','urist.mcvankab+3@freddiesjokes.com');
+//var_dump($result);
