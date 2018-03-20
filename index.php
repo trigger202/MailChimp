@@ -117,7 +117,7 @@ $data = array('name'=>'my first list item - updated',
 
 $data = array(
 
-    "email_address"=>"property@gmail.com",
+    "email_address"=>"property@gmaicl.com",
     "status"=>"subscribed",
     'merge_fields'=>array('FNAME'=>'test first name',
                             'LNAME'=>'test last name')

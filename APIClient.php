@@ -222,6 +222,7 @@ class APIClient
         {
             echo "ERROR...Something went wrong.\n\n\n";
             print_r($e);
+            exit();
         }
     }
 
