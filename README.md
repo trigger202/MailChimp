@@ -3,8 +3,6 @@
 # MailChimp
 
 Overview:
-===================================================================
-
 This little library interacts with MailChimp API. In this code you can do the following ONLY.
 ---------------------------------------------------------------------------------------------------
 1) create a list.
