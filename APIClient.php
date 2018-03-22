@@ -15,7 +15,8 @@ class APIClient
     private $url = "https://us12.api.mailchimp.com/3.0";
     private $httpClient;
     private $api_key ;
-    private  $listCount ;
+    public  $listCount =0;
+    public $isSynced = false;
 
     private $db_conn;
     /**
@@ -30,12 +31,19 @@ class APIClient
         $this->api_key = $api_key;
         $this->httpClient = new GuzzleHttp\Client();
         $this->db_conn = new DB('localhost','root','','loyalty');
+        $this->isSynced = $this->synDBandMailchimp();
+
     }
 
     /*get all the available lists in mailchimp and insert them into db.
     will use this list for deletion or updating */
-    public function synDBandMailchimp()
+    private function synDBandMailchimp()
     {
+
+        echo '<br>syncing data <br>';
+
+        $this->db_conn->dropTables();
+
         $mailChimpList = json_decode($this->getLists(),true);
         $newList = array();
         if(isset($mailChimpList['lists']))
@@ -45,16 +53,28 @@ class APIClient
                 $newList[] = array('id'=>$item['id'], 'name'=>$item['name']);
             }
         }
-        print_r($this->db_conn->syncList($newList));
+        $this->setListCount(count($newList));
+        return $this->db_conn->syncList($newList);
     }
 
-
-
+    public function setListCount($count)
+    {
+        $this->listCount = $count;
+    }
 
 
     /*gets all available lists*/
     public function getLists()
     {
+
+
+        if($this->listCount>0 && $this->isSynced)
+        {
+            echo 'chcking the db';
+            return json_encode($this->db_conn->getDBList());
+        }
+        if($this->listCount==0 && $this->isSynced)
+            return array();
 
         $url = $this->url.'/lists/';
         try

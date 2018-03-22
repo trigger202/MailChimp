@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0856be10-3fb0-4893-8172-651b4d08287e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/DB.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/loyalty.iml" afterPath="$PROJECT_DIR$/.idea/loyalty.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/APIClient.php" afterPath="$PROJECT_DIR$/APIClient.php" />
+      <change beforePath="$PROJECT_DIR$/DB.php" afterPath="$PROJECT_DIR$/DB.php" />
       <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,14 +17,14 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.1">
+    <splitter split-orientation="horizontal" split-proportion="0.5684411">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="230">
-                  <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+                  <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
                   <folding>
                     <element signature="e#6#87#0#PHP" expanded="true" />
                   </folding>
@@ -37,8 +35,8 @@
           <file leaf-file-name="APIClient.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/APIClient.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="580">
-                  <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="15" />
+                <state relative-caret-position="460">
+                  <caret line="32" column="65" lean-forward="false" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
                   <folding>
                     <element signature="e#6#87#0#PHP" expanded="true" />
                   </folding>
@@ -70,11 +68,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+                <state relative-caret-position="360">
+                  <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="26" />
                   <folding>
                     <element signature="e#6#87#0#PHP" expanded="true" />
                   </folding>
@@ -82,18 +80,25 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DB.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="DB.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/DB.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="580">
-                  <caret line="124" column="37" lean-forward="true" selection-start-line="124" selection-start-column="37" selection-end-line="124" selection-end-column="37" />
+                <state relative-caret-position="518">
+                  <caret line="166" column="29" lean-forward="true" selection-start-line="166" selection-start-column="29" selection-end-line="166" selection-end-column="29" />
                   <folding>
-                    <marker date="1521722376230" expanded="true" signature="1171:1197" ph="Select id, n... lists" />
-                    <marker date="1521722376230" expanded="true" signature="1665:1703" ph="Select id, n... lists" />
-                    <marker date="1521722376230" expanded="true" signature="1665:1705" ph="Select id, n... lists" />
-                    <marker date="1521722376230" expanded="true" signature="1665:1716" ph="Select id, n... lists" />
-                    <marker date="1521722376230" expanded="true" signature="2101:2150" ph="INSERT INTO ${$this-&gt;database}.`lists`... " />
-                    <marker date="1521722376230" expanded="true" signature="2642:2665" ph="INSERT INTO lists... " />
+                    <marker date="1521727962487" expanded="true" signature="1176:1202" ph="drop table i... " />
+                    <marker date="1521727962487" expanded="true" signature="1225:1396" ph="create table... if" />
+                    <marker date="1521727962487" expanded="true" signature="1690:1711" ph="drop table i... " />
+                    <marker date="1521727962487" expanded="true" signature="1690:1718" ph="drop table i... " />
+                    <marker date="1521727962487" expanded="true" signature="1738:2023" ph="create table... if" />
+                    <marker date="1521727962487" expanded="true" signature="2389:2415" ph="Select id, n... lists" />
+                    <marker date="1521727962487" expanded="true" signature="2747:2775" ph="drop table i... " />
+                    <marker date="1521727962487" expanded="true" signature="2807:2833" ph="drop table i... " />
+                    <marker date="1521727962487" expanded="true" signature="3164:3202" ph="Select id, n... lists" />
+                    <marker date="1521727962487" expanded="true" signature="3164:3204" ph="Select id, n... lists" />
+                    <marker date="1521727962487" expanded="true" signature="3164:3215" ph="Select id, n... lists" />
+                    <marker date="1521727962487" expanded="true" signature="3652:3687" ph="INSERT INTO `lists`... " />
+                    <marker date="1521727962487" expanded="true" signature="4087:4102" ph="INSERT INTO ${$this-&gt;database}.`lists`... " />
                   </folding>
                 </state>
               </provider>
@@ -112,6 +117,12 @@
       <find>updateList</find>
       <find>createMember</find>
       <find>getSampleListObject</find>
+      <find>syncList</find>
+      <find>listsTableSetUp</find>
+      <find>getLists</find>
+      <find>synDBandMailchimp</find>
+      <find>calling getlists</find>
+      <find>membersTableSetUp</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -127,8 +138,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/APIClient.php" />
         <option value="$PROJECT_DIR$/DB.php" />
+        <option value="$PROJECT_DIR$/APIClient.php" />
       </list>
     </option>
   </component>
@@ -216,12 +227,12 @@
       <updated>1521453068003</updated>
       <workItem from="1521453069284" duration="30077000" />
       <workItem from="1521669283300" duration="1826000" />
-      <workItem from="1521716734523" duration="5735000" />
+      <workItem from="1521716734523" duration="11388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37638000" />
+    <option name="totallyTimeSpent" value="43291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="-8" width="1696" height="1026" extended-state="6" />
@@ -363,10 +374,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="166" column="29" lean-forward="true" selection-start-line="166" selection-start-column="29" selection-end-line="166" selection-end-column="29" />
+          <folding>
+            <marker date="1521727962487" expanded="true" signature="1176:1202" ph="drop table i... " />
+            <marker date="1521727962487" expanded="true" signature="1225:1396" ph="create table... if" />
+            <marker date="1521727962487" expanded="true" signature="1690:1711" ph="drop table i... " />
+            <marker date="1521727962487" expanded="true" signature="1690:1718" ph="drop table i... " />
+            <marker date="1521727962487" expanded="true" signature="1738:2023" ph="create table... if" />
+            <marker date="1521727962487" expanded="true" signature="2389:2415" ph="Select id, n... lists" />
+            <marker date="1521727962487" expanded="true" signature="2747:2775" ph="drop table i... " />
+            <marker date="1521727962487" expanded="true" signature="2807:2833" ph="drop table i... " />
+            <marker date="1521727962487" expanded="true" signature="3164:3202" ph="Select id, n... lists" />
+            <marker date="1521727962487" expanded="true" signature="3164:3204" ph="Select id, n... lists" />
+            <marker date="1521727962487" expanded="true" signature="3164:3215" ph="Select id, n... lists" />
+            <marker date="1521727962487" expanded="true" signature="3652:3687" ph="INSERT INTO `lists`... " />
+            <marker date="1521727962487" expanded="true" signature="4087:4102" ph="INSERT INTO ${$this-&gt;database}.`lists`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        <state relative-caret-position="230">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
           </folding>
@@ -375,25 +408,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/APIClient.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="15" />
+        <state relative-caret-position="460">
+          <caret line="32" column="65" lean-forward="false" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="124" column="37" lean-forward="true" selection-start-line="124" selection-start-column="37" selection-end-line="124" selection-end-column="37" />
-          <folding>
-            <marker date="1521722376230" expanded="true" signature="1171:1197" ph="Select id, n... lists" />
-            <marker date="1521722376230" expanded="true" signature="1665:1703" ph="Select id, n... lists" />
-            <marker date="1521722376230" expanded="true" signature="1665:1705" ph="Select id, n... lists" />
-            <marker date="1521722376230" expanded="true" signature="1665:1716" ph="Select id, n... lists" />
-            <marker date="1521722376230" expanded="true" signature="2101:2150" ph="INSERT INTO ${$this-&gt;database}.`lists`... " />
-            <marker date="1521722376230" expanded="true" signature="2642:2665" ph="INSERT INTO lists... " />
           </folding>
         </state>
       </provider>

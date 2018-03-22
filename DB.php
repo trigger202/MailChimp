@@ -21,6 +21,7 @@ class DB
      * @param $host
      * @param $user
      * @param $password
+     * @param $databaseName
      */
     public function __construct($host, $user, $password, $databaseName)
     {
@@ -35,8 +36,10 @@ class DB
         if (!$this->conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
+        $this->listsTableSetUp();
+        $this->membersTableSetUp();
 
-        return $this->conn;
+
     }
 
     public function truncateDB()
@@ -47,6 +50,50 @@ class DB
 //        $sql = "truncate $"
 
     }
+
+    public function listsTableSetUp(){
+
+        if (!$this->isConnected())
+            exit('Could not connect to DB');
+
+        $this->conn->query("drop table if exists lists");
+
+        $sql=   " create table if not exists lists
+                (
+                    id varchar(255) primary key unique,
+                    name varchar(255) not null
+                );";
+
+        if($this->conn->query($sql)==true)
+            echo "List table reset";
+        else
+            echo $this->conn->error;
+
+    }
+
+    public function membersTableSetUp(){
+
+        if (!$this->isConnected())
+            exit('Could not connect to DB');
+
+        $this->conn->query("drop table if exists members");
+
+        $sql= "create table if not exists members
+                (
+                    id varchar(255) primary key unique,
+                    list_id varchar(255),
+                    email varchar(255) unique,
+                    FOREIGN KEY (list_id) REFERENCES lists(id)    
+  
+                );";
+
+        if($this->conn->query($sql)==true)
+            echo "members table reset<br>";
+        else
+            echo $this->conn->error;
+
+    }
+
 
 
     public function getConnection()
@@ -76,7 +123,19 @@ class DB
         return $list;
     }
 
+    public function dropTables()
+    {
+        $this->conn->query("drop table if exists members");
+        $this->conn->query("drop table if exists lists");
+    }
 
+
+    public function setUpTables()
+    {
+        $this->listsTableSetUp();
+        $this->membersTableSetUp();
+
+    }
     public function getDBListItem($listID)
     {
         if (!$this->isConnected())
@@ -105,8 +164,9 @@ class DB
     public function syncList($list)
     {
 
-
-        $sql = "INSERT INTO $this->database.`lists` (`id`,`name`) ";
+        $this->setUpTables();
+        $values = "";
+        $keys = "INSERT INTO `lists`(id,name) values";
         foreach ($list as $index=>$item)
         {
             if(!isset($item['id']) || !isset($item['name']))
@@ -117,20 +177,25 @@ class DB
                 print_r($item);
                 exit();
             }
-
             $id = $item['id'];
             $name = $item['name'];
-
-            $f = $sql." values('$id','$name'sdfd)";
-            $this->conn->query("$f");
-
-//            $sql.= "values('$id','$name');";
+            $values.="('$id','$name'),";
 
         }
+
+        $sql = rtrim($keys.' '.$values,",");
         if(!$this->isConnected())
             exit('not connected to db');
 
-//        exit($sql);
+        if ($this->conn->query($sql) === TRUE)
+        {
+            return true;
+        }
+        else
+        {
+            echo "Error: " . $sql . "<br>" . $this->conn->error;
+            return false;
+        }
 
     }
 

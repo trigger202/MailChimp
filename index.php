@@ -16,8 +16,7 @@ $api_key = $config['API_Key'];
 $chimp = new APIClient($api_key);
 
 
-$chimp->synDBandMailchimp();
-
+var_dump($chimp->listCount);
 exit();
 
 
