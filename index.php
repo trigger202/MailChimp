@@ -16,6 +16,13 @@ $api_key = $config['API_Key'];
 $chimp = new APIClient($api_key);
 
 
+$chimp->synDBandMailchimp();
+
+exit();
+
+
+
+
 // ===============list functions ==============
 
 /* create a list */
@@ -136,14 +143,14 @@ $data = array(
 
 $data = array(
 
-    "email_address"=>"property@gmail.com",
-    "status"=>"subscribed",
-    'merge_fields'=>array('FNAME'=>'test first name',
-        'LNAME'=>'test last name')
+//    "email_address"=>"property@gmail.com",
+//    "status"=>"subscribed",
+//    'merge_fields'=>array('FNAME'=>'test first name',
+//        'LNAME'=>'test last name')
 
 );
 
-$result = $chimp->updateMember('ab6d6ea698',"thisisadfdatest@gmail.com", json_encode($data));
+$result = $chimp->updateMember('ab6d6ea698',"ali@gmail.com", json_encode($data));
 print_r($result);
 
 return;

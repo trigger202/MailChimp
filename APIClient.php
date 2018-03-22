@@ -6,13 +6,18 @@
  * Time: 8:08 PM
  */
 
+include_once ('DB.php');
+
+
 class APIClient
 {
     /*change this if your datacenter is different*/
     private $url = "https://us12.api.mailchimp.com/3.0";
     private $httpClient;
     private $api_key ;
+    private  $listCount ;
 
+    private $db_conn;
     /**
      * APIClient constructor.
      * @param $httpClient
@@ -24,11 +29,33 @@ class APIClient
     {
         $this->api_key = $api_key;
         $this->httpClient = new GuzzleHttp\Client();
+        $this->db_conn = new DB('localhost','root','','loyalty');
     }
+
+    /*get all the available lists in mailchimp and insert them into db.
+    will use this list for deletion or updating */
+    public function synDBandMailchimp()
+    {
+        $mailChimpList = json_decode($this->getLists(),true);
+        $newList = array();
+        if(isset($mailChimpList['lists']))
+        {
+            foreach ($mailChimpList['lists'] as $item)
+            {
+                $newList[] = array('id'=>$item['id'], 'name'=>$item['name']);
+            }
+        }
+        print_r($this->db_conn->syncList($newList));
+    }
+
+
+
+
 
     /*gets all available lists*/
     public function getLists()
     {
+
         $url = $this->url.'/lists/';
         try
         {
